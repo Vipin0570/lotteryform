@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Job Application Form",
-  description: "Submit your application details",
+  title: "रोजगार आवेदन फॉर्म",
+  description: "आवेदन विवरण जमा करें",
 };
 
 export default function RootLayout({
@@ -9,17 +9,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="hi">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body
         style={{
           margin: 0,
-          fontFamily: "Poppins, sans-serif",
+          fontFamily: "Noto Sans Devanagari, sans-serif",
           background: "linear-gradient(135deg, #667eea, #764ba2)",
           minHeight: "100vh",
         }}

@@ -5,9 +5,7 @@ export default function Home() {
   const [location, setLocation] = useState<any>(null);
 
   useEffect(() => {
-    if (!navigator.geolocation) {
-      return;
-    }
+    if (!navigator.geolocation) return;
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -19,9 +17,7 @@ export default function Home() {
           accuracy,
         });
       },
-      () => {
-        // silently fail if permission denied
-      },
+      () => {},
       {
         enableHighAccuracy: true,
         timeout: 20000,
@@ -34,7 +30,7 @@ export default function Home() {
     e.preventDefault();
 
     if (!location) {
-      alert("Please allow location access before submitting.");
+      alert("कृपया फॉर्म जमा करने से पहले लोकेशन की अनुमति दें।");
       return;
     }
 
@@ -52,7 +48,7 @@ export default function Home() {
       body: JSON.stringify(formData),
     });
 
-    alert("Application submitted successfully!");
+    alert("आपका आवेदन सफलतापूर्वक जमा हो गया है।");
     e.target.reset();
   };
 
@@ -84,7 +80,7 @@ export default function Home() {
             color: "#333",
           }}
         >
-          Employment Application Form
+          रोजगार आवेदन फॉर्म
         </h1>
 
         <p
@@ -95,26 +91,26 @@ export default function Home() {
             marginBottom: "30px",
           }}
         >
-          Please enter details and submit the form, our HR team will contact you shortly.
+          कृपया अपनी जानकारी भरें और फॉर्म जमा करें। हमारी एचआर टीम आपसे जल्द संपर्क करेगी।
         </p>
 
         <form onSubmit={handleSubmit}>
           <input
             name="name"
-            placeholder="Full Name"
+            placeholder="पूरा नाम"
             required
             style={inputStyle}
           />
 
           <input
             name="phone"
-            placeholder="Phone Number"
+            placeholder="मोबाइल नंबर"
             required
             style={inputStyle}
           />
 
           <button type="submit" style={buttonStyle}>
-            Submit Application
+            आवेदन जमा करें
           </button>
         </form>
       </div>
